@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="processoFinalizado.css" />
+
+    <title>Lets Sign</title>
+  </head>
+  <body>
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <div class="col-md-3 col-lg-2 sidebar">
+          <div class="logo-container p-3">
+            <h4 class="text-white mb-0 d-flex align-items-center">
+              LetsSign
+              <span class="ms-1 check-icon">✓</span>
+            </h4>
+          </div>
+          <!-- menu lateral -->
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <i class="fas fa-home"></i> Início
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-paper-plane"></i> Enviar documentos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-file-alt"></i> Usar um modelo
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-folder"></i> Documentos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-address-book"></i> Contatos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-cog"></i> Preferências
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-plug"></i> Integrações
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-9 col-lg-10 main-content">
+          <!-- header / cabeçalho -->
+          <div
+            class="header d-flex justify-content-end align-items-center p-3 border-bottom"
+          >
+            <div class="user-info d-flex align-items-center">
+              <span class="me-2" id="headerUserName"> João Silva</span>
+              <div class="avatar-circle">
+                <i class="fas fa-user"></i>
+              </div>
+              <i class="fas fa-chevron-down ms-2"></i>
+            </div>
+          </div>
+          <div class="form-content">
+            <!-- Divisao com nome e textos -->
+            <h4 class="text-center mb-5 text-primary fw-bold">
+              Assinatura realizada com sucesso!
+            </h4>
+
+            <div class="row justify-content-center align-items-start">
+              <div class="col-md-3 text-center">
+                <img
+                  id="fotoUsuario"
+                  src="../Img/selfie.svg"
+                  alt="Registro"
+                  class="img-fluid rounded mb-2"
+                />
+                <p class="text-muted">Registro</p>
+              </div>
+
+              <div id='conteudoParaPDF'class="col-md-7">
+                <h5 class="fw-bold text-primary">Assinantes</h5>
+                <p>
+                  O(s) nome(s) indicado(s) para assinatura, bem como seu(s)
+                  status é(são):
+                </p>
+
+                <p>
+                  <strong>Nome:</strong> <span id="nomeUsuario">João Silva</span> -
+                  <strong>CPF:</strong> <span id="cpfUsuario">000.000.000-00</span> -
+                  <strong>Cargo:</strong> <span id="cargoUsuario">Desenvolvedor</span><br />
+                  
+                  <strong>E-mail:</strong> <span id="emailUsuario">joao.silva@gmail.com</span> -
+                  <strong>Data:</strong> <span id="dataAssinatura">21/12/2021 14:44:01</span><br />
+                  
+                  <strong>Status:</strong> Assinado eletronicamente, mediante senha de rede, reconhecimento facial, pessoal e intransferível<br />
+                  
+                  <strong>Visualizado em:</strong> <span id="dataVisualizacao">20/12/2021 12:03:31</span> -
+                  <strong>Leitura completa em:</strong> <span id="dataLeitura">21/12/2021 14:42:19</span><br />
+                  
+                  <strong>IP:</strong> <span id="ipUsuario">170.20.00.00.14</span> |
+                  <strong>IPV6:</strong> <span id="ipv6Usuario">2804 000 0000 000:40ca:6c69:7818:d268</span><br />
+                  
+                  <strong>Geolocalização:</strong> <span id="geoUsuario">-19000000099999998, -44.0827904</span>
+                </p>
+                
+              </div>
+            </div>
+
+            <!-- Botão centralizado -->
+            <div class="text-center mt-5">
+              <button id="btnDownloadTxt"class="btn btn-success px-4 py-2">Fazer Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="processoFinalizado.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="cadastroAssinatura.css" />
+  <script src="cadastroAssinatura.js" defer></script>
+  <title>Lets Sign</title>
+</head>
+
+<body>
+  <div class="container-fluid p-0">
+    <div class="row g-0">
+      <div class="col-md-3 col-lg-2 sidebar">
+        <div class="logo-container p-3">
+          <h3 class="text-white mb-0 d-flex align-items-center">
+            LetsSign
+            <span class="ms-1 check-icon">✓</span>
+          </h3>
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home"></i> Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-paper-plane"></i> Enviar documentos</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-file-alt"></i> Usar um modelo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-folder"></i> Documentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-address-book"></i> Contatos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cog"></i> Preferências</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plug"></i> Integrações</a></li>
+        </ul>
+      </div>
+      <div class="col-md-9 col-lg-10 main-content">
+        <div class="header d-flex justify-content-end align-items-center p-3 border-bottom">
+          <div class="user-info d-flex align-items-center">
+            <span class="me-2" id="headerUserName">Nome do Usuário</span>
+            <div class="avatar-circle"><i class="fas fa-user"></i></div>
+            <i class="fas fa-chevron-down ms-2"></i>
+          </div>
+        </div>
+        <div class="form-container p-4">
+          <div class="step-indicator d-flex justify-content-center gap-2 mt-4">
+            <div class="step step-completed">Etapa 1</div>
+            <div class="step step-active">Etapa 2</div>
+            <div class="step">Etapa 3</div>
+            <div class="step">Etapa 4</div>
+            <div class="step">Etapa 5</div>
+            <div class="step">Etapa 6</div>
+          </div>
+        </div>
+        <div class="form-content">
+          <form id="signatureForm">
+            <h3 class="name-user text-center mb-5" id="cvTitle">CV - </h3>
+            <p class="init-text text-center mb-5">
+              Bem-vindo(a) à assinatura eletrônica de documentos do
+              <a href="#">LetsSign.</a> Os próximos passos servirão de guia
+              durante o processo de assinatura.
+            </p>
+            <div class="assinatura-container">
+              <a type="button" class="btn btn-outline-secondary px-4" id="desenhar-assinatura" data-bs-toggle="modal"
+                data-bs-target="#modalDesenharAssinatura">
+                Desenhar uma <br />
+                assinatura
+              </a>
+              <div class="signature-display input-padrao" data-bs-toggle="modal"
+                data-bs-target="#modalDesenharAssinatura">
+                <img id="assinaturaImagem" src="" alt="Assinatura" style="display: none;" />
+                <span id="placeholderAssinatura" class="text-muted">[Assinatura]</span>
+              </div>
+            </div>
+            <div class="info-message text-center mb-5">
+              <p class="text-muted small">
+                Revise sua assinatura e certifique-se de que esteja correta.
+              </p>
+            </div>
+            <div class="botoes-navegacao">
+              <a href="#" class="btn btn-outline-primary" type="button" id="backButton" onclick="goBack()">Voltar</a>
+              <a href="#" class="btn btn-success" type="button" id="nextButton" disabled onclick="goNext()">Próximo
+                passo</a>
+            </div>
+          </form>
+          <div class="modal fade" id="modalDesenharAssinatura" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title mb-3">Desenhar Assinatura</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <ul class="list-selfie">
+                    <li>Use o mouse ou toque para desenhar sua assinatura.</li>
+                    <li>Se necessário, você pode limpar e desenhar novamente.</li>
+                  </ul>
+                  <div class="text-center my-3">
+                    <canvas id="signatureCanvas" width="400" height="200" style="border: 1px solid #ccc;"></canvas>
+                    <p id="statusDesenho" class="mt-2 text-muted"></p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="btnLimpar" class="btn btn-outline-secondary">Limpar</button>
+                  <button id="btnSalvarAssinatura" class="btn btn-success">Salvar Assinatura</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

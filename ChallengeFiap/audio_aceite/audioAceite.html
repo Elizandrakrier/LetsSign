@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="audioAceite.css" />
+
+  <script src="audioAceite.js" defer></script>
+
+  <title>Lets Sign</title>
+</head>
+
+<body>
+  <div class="container-fluid p-0">
+    <div class="row g-0">
+      <div class="col-md-3 col-lg-2 sidebar">
+        <div class="logo-container p-3">
+          <h4 class="text-white mb-0 d-flex align-items-center">
+            LetsSign
+            <span class="ms-1 check-icon">✓</span>
+          </h4>
+        </div>
+        <!-- menu lateral -->
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <i class="fas fa-home"></i> Início
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-paper-plane"></i> Enviar documentos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-file-alt"></i> Usar um modelo
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-folder"></i> Documentos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-address-book"></i> Contatos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-cog"></i> Preferências
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-plug"></i> Integrações
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-9 col-lg-10 main-content">
+        <!-- header / cabeçalho -->
+        <div class="header d-flex justify-content-end align-items-center p-3 border-bottom">
+          <div class="user-info d-flex align-items-center">
+            <span id="headerUserName" class="me-2">João Silva</span>
+            <div class="avatar-circle">
+              <i class="fas fa-user"></i>
+            </div>
+            <i class="fas fa-chevron-down ms-2"></i>
+          </div>
+        </div>
+
+        <div class="form-container p-4">
+          <!-- Progresso da assinatura -->
+          <div class="step-indicator d-flex justify-content-center gap-2 mt-4">
+            <div class="step step-completed">Etapa 1</div>
+            <div class="step step-completed">Etapa 2</div>
+            <div class="step step-completed">Etapa 3</div>
+            <div class="step step-completed">Etapa 4</div>
+            <div class="step step-active">Etapa 5</div>
+            <div class="step">Etapa 6</div>
+          </div>
+        </div>
+        <div class="form-content">
+          <!-- Divisao com nome e textos -->
+          <div class="text-init">
+            <h3 id="cvTitle" class="name-user text-center mb-5">CV - </h3>
+            <p class="init-text text-center mb-5">Para manifestar que concorda com os termos do presente contrato, por
+              gentileza grave um audio dizendo: "eu concordo". </p>
+          </div>
+
+          <div class="container mt-5">
+            <!-- Texto de envio da AUDIO -->
+            <div class="row align-items-center mb-3">
+              <div class="col-md-4 text-center mx-auto">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGravacaoAudio">
+                  Gravar áudio
+                </button>
+              </div>
+            </div>
+
+            <!-- Área para exibir o áudio gravado -->
+            <div id="audioDisplay" class="text-center mb-3" style="display: none;">
+              <audio id="audioPlayer" controls></audio>
+              <p id="audioStatus" class="text-success mt-2">
+                <i class="fas fa-check-circle"></i> Áudio gravado e enviado com sucesso!
+              </p>
+            </div>
+
+            <!-- Modal AUDIO -->
+            <div class="modal fade" id="modalGravacaoAudio" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title mb-3">Gravação de áudio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    <ul class="list-selfie">
+                      <li>Esteja em lugar silencioso.</li>
+                      <li>Caso necessário, poderá enviar um novo.</li>
+                    </ul>
+                    <div class="text-center my-3">
+                      <button id="btnGravar" class="btn btn-outline-primary">🎙️ Gravar áudio</button>
+                      <p id="statusGravacao" class="mt-2 text-muted"></p>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button id="btnRegravar" class="btn btn-outline-primary d-none">Gravar novamente</button>
+                    <button id="btnOuvir" class="btn btn-outline-secondary d-none">Ouvir áudio</button>
+                    <button id="btnEnviar" class="btn btn-success d-none">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botoes -->
+            <div class="botoes-navegacao">
+              <a href="../registro_facial/registroFacial.html" class="btn btn-outline-primary" type="button"
+                id="backButton">Voltar</a>
+              <a href="../assinatura_concluida/assinaturaConcluida.html" class="btn btn-success" type="button"
+                id="nextButton" disabled>Próximo passo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

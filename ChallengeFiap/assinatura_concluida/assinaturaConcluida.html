@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="assinaturaConcluida.css" />
+
+    <title>Lets Sign</title>
+  </head>
+  <body>
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <div class="col-md-3 col-lg-2 sidebar">
+          <div class="logo-container p-3">
+            <h4 class="text-white mb-0 d-flex align-items-center">
+              LetsSign
+              <span class="ms-1 check-icon">✓</span>
+            </h4>
+          </div>
+          <!-- menu lateral -->
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <i class="fas fa-home"></i> Início
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-paper-plane"></i> Enviar documentos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-file-alt"></i> Usar um modelo
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-folder"></i> Documentos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-address-book"></i> Contatos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-cog"></i> Preferências
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-plug"></i> Integrações
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-9 col-lg-10 main-content">
+            <!-- header / cabeçalho -->
+            <div
+              class="header d-flex justify-content-end align-items-center p-3 border-bottom"
+            >
+              <div class="user-info d-flex align-items-center">
+                <span class="me-2" id="headerUserName"> João Silva</span>
+                <div class="avatar-circle">
+                  <i class="fas fa-user"></i>
+                </div>
+                <i class="fas fa-chevron-down ms-2"></i>
+              </div>
+            </div>
+
+          <div class="form-container p-4">
+            <!-- Progresso da assinatura -->
+            <div class="step-indicator d-flex justify-content-center gap-2 mt-4">
+              <div class="step step-completed">Etapa 1</div>
+              <div class="step step-completed">Etapa 2</div>
+              <div class="step step-completed">Etapa 3</div>
+              <div class="step step-completed">Etapa 4</div>
+              <div class="step step-completed">Etapa 5</div>
+              <div class="step step-active">Etapa 6</div>
+            </div>
+          </div>
+          <div class="form-content">
+            <!-- Divisao com nome e textos -->
+            <div class="text-init">
+              <p class="sucess text-center mb-5">Assinatura registrada com sucesso! </p>
+              <p class="init-text text-center mb-5">Agora você pode conferir sua assinatura em >“Minhas assinaturas”. </p>
+            </div>
+
+            <!-- Botoes -->
+            <div class="botoes-navegacao">
+              <a href="../audio_aceite/audioAceite.html" class="btn btn-outline-primary" type="button" id="backButton">Voltar</a>
+              <a href="../processo_finalizado/processoFinalizado.html" class="btn btn-success" type="button"
+                id="nextButton">Próximo passo</a
+                >
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assinaturaConcluida.js"></script>
+  </body>
+</html>

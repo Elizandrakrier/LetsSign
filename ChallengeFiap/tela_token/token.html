@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="token.css" />
+  <script src="token.js" defer></script>
+  <title>Lets Sign</title>
+</head>
+
+<body>
+  <div class="container-fluid p-0">
+    <div class="row g-0">
+      <div class="col-md-3 col-lg-2 sidebar">
+        <div class="logo-container p-3">
+          <h4 class="text-white mb-0 d-flex align-items-center">
+            LetsSign
+            <span class="ms-1 check-icon">✓</span>
+          </h4>
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home"></i> Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-paper-plane"></i> Enviar documentos</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-file-alt"></i> Usar um modelo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-folder"></i> Documentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-address-book"></i> Contatos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cog"></i> Preferências</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plug"></i> Integrações</a></li>
+        </ul>
+      </div>
+      <div class="col-md-9 col-lg-10 main-content">
+        <div class="header d-flex justify-content-end align-items-center p-3 border-bottom">
+          <div class="user-info d-flex align-items-center">
+            <span id="headerUserName" class="me-2"></span>
+            <div class="avatar-circle"><i class="fas fa-user"></i></div>
+            <i class="fas fa-chevron-down ms-2"></i>
+          </div>
+        </div>
+        <div class="form-container p-4">
+          <div class="step-indicator d-flex justify-content-center gap-2 mt-4">
+            <div class="step step-completed">Etapa 1</div>
+            <div class="step step-completed">Etapa 2</div>
+            <div class="step step-active">Etapa 3</div>
+            <div class="step">Etapa 4</div>
+            <div class="step">Etapa 5</div>
+            <div class="step">Etapa 6</div>
+          </div>
+        </div>
+        <div class="form-content">
+          <form id="tokenForm">
+            <h3 id="cvTitle" class="name-user text-center mb-5"></h3>
+            <p class="init-text text-center mb-5">Enviamos um token para o E-mail: <i class="fas fa-envelope"></i> <span
+                id="emailDisplay"></span></p>
+            <div id="emailPreview" class="email-preview mb-4">
+              <p class="text-muted small"><strong>E-mail recebido:</strong> Seu token de verificação é: <span
+                  id="tokenDisplay"></span></p>
+            </div>
+            <div class="mb-4">
+              <label for="text-token" class="form-label fw-bold">Insira o Token recebido no campo abaixo*</label>
+              <input type="text" class="form-control" id="text-token" value="" required />
+            </div>
+            <div id="tokenMessage" class="info-message text-center mb-5">
+              <p class="text-muted small">Token enviado! Verifique seu e-mail.</p>
+            </div>
+            <div class="info-message text-center mb-5">
+              <p class="text-muted small">
+                Não recebeu ou precisa de um novo token? <a href="#" id="resendToken">Reenviar</a>
+              </p>
+            </div>
+            <div class="botoes-navegacao">
+              <a href="#" class="btn btn-outline-primary" type="button" id="backButton" onclick="goBack()">Voltar</a>
+              <a href="#" class="btn btn-success" type="button" id="nextButton" disabled onclick="goNext()">Próximo
+                passo</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

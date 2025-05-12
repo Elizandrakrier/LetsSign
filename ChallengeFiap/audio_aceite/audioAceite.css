@@ -1,0 +1,220 @@
+﻿body {
+  font-family: Arial, sans-serif;
+}
+
+/* Opções de fonte */
+.font-option {
+  cursor: pointer;
+  transition: var(--transition-base);
+  border: 2px solid var(--gray-300);
+}
+
+.font-option:hover {
+  border-color: var(--primary-color);
+}
+
+.font-option span {
+  display: block;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Menu lateral */
+.sidebar {
+  background-color: #2a2a5a;
+  min-height: 100vh;
+  color: white;
+}
+
+.logo-container {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.check-icon {
+  color: #4cd964;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Cabeçalho */
+.header {
+  background-color: white;
+}
+
+.avatar-circle {
+  width: 32px;
+  height: 32px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.main-content {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Caixa das informações */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Progresso da assinatura */
+.step-indicator {
+  background-color: #f8f8f8;
+  border-radius: 30px;
+  padding: 8px 16px;
+}
+
+.step {
+  padding: 8px 20px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: #888;
+  font-weight: 500;
+  cursor: default;
+}
+
+.step+.step {
+  border-left: 1px solid #eee;
+}
+
+.step-completed {
+  color: #000;
+  font-weight: 700;
+}
+
+.step-active {
+  background-color: #4cd964;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Formulário */
+.form-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-control {
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus {
+  border-color: #4cd964;
+  box-shadow: 0 0 0 0.2rem rgba(76, 217, 100, 0.25);
+}
+
+/* Texto inicial */
+.name-user {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.init-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Botões */
+.botoes-navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 20px 0 20px;
+}
+
+#backButton {
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+#backButton:hover {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+#nextButton {
+  background-color: #4cd964;
+  border-color: #4cd964;
+}
+
+#nextButton:hover {
+  background-color: #3cb853;
+  border-color: #3cb853;
+}
+
+/* Exibição do áudio */
+#audioDisplay {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#audioPlayer {
+  width: 100%;
+  max-width: 300px;
+}
+
+#audioStatus {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Ajustes no modal de gravação */
+#modalGravacaoAudio .modal-body {
+  padding: 20px;
+}
+
+#modalGravacaoAudio .list-selfie {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+#modalGravacaoAudio .modal-footer {
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Centralizar o botão Gravar Áudio */
+.row.align-items-center .col-md-4 {
+  display: flex;
+  justify-content: center;
+}
+
+/* Reset de estilos gerais para evitar conflitos */
+.form-content .text-init,
+.form-content .container {
+  margin: 0 auto;
+  max-width: 600px;
+}
